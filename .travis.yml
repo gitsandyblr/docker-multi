@@ -14,7 +14,7 @@ after_success:
   - docker build -t sandeepblh/multi-server ./server
   - docker build -t sandeepblh/multi-worker ./worker
   #Lg in to the docker cli
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdio
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #Take those images and push to dockerhub
   - docker push sandeepblh/multi-client
   - docker push sandeepblh/multi-nginx
